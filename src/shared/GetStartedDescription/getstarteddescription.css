@@ -1,0 +1,23 @@
+.list {
+  max-width: 508px;
+}
+
+.item {
+  display: flex;
+  position: relative;
+  padding-left: 17px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 33px;
+}
+
+.item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 5px;
+  height: 5px;
+  background-color: var(--tomatoB7);
+  border-radius: 50%;
+}

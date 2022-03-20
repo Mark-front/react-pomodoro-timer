@@ -1,0 +1,35 @@
+.button {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  padding: 19px 50px;
+  color: var(--white);
+}
+
+.green {
+  background: var(--greenA8);
+}
+
+.red {
+  background: var(--tomatoDC);
+}
+
+.grey {
+  background: var(--greyF4);
+  border: 2px solid var(--greyC4);
+  color: var(--greyC4);
+}
+
+.button:hover.green {
+  background: var(--green89);
+}
+
+.button:hover.red {
+  background: var(--tomatoB7);
+}
+
+.button:hover.grey {
+  background: var(--tomatoDC);
+  color: var(--white);
+}

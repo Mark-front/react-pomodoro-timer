@@ -1,0 +1,15 @@
+.box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--greyC4);
+  padding: 19px 40px;
+}
+
+.text {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 17px;
+}

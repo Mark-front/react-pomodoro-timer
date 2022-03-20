@@ -1,0 +1,8 @@
+.box {
+  padding-top: 100px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}

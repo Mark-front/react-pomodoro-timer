@@ -1,0 +1,13 @@
+.button {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--greyC4);
+}
+
+.button:hover {
+  background: var(--green89);
+}

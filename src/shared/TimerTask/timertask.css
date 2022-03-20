@@ -1,0 +1,10 @@
+.box {
+  display: flex;
+}
+
+.name {
+  display: inline;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 17px;
+}
