@@ -1,20 +1,25 @@
 import React from 'react';
 import styles from './timerbuttonscontainer.css';
-import { Button } from '../Button/Button';
 import { Indent } from '../Indent';
+import { ButtonTimerOn } from '../ButtonTimerOn/ButtonTimerOn';
+import { ButtonTimerOff } from '../ButtonTimerOff/ButtonTimerOff';
 
 interface IProps {
+  notTask?: boolean;
   startTimer: () => void;
   stopTimer: () => void;
+  resetTimer: () => void;
+  isActive: boolean | null;
+  isRest: boolean;
 }
 
 
-export function TimerButtonsContainer({startTimer, stopTimer}: IProps) {
+export function TimerButtonsContainer({isRest, notTask=true, startTimer, stopTimer, resetTimer, isActive}: IProps) {
   return (
     <div className={styles.box}>
-      <Button onClick={startTimer} type="button" color="green">Старт</Button>
+      <ButtonTimerOn isDisabled={notTask} startTimer={startTimer} stopTimer={stopTimer} isActive={isActive}/>
       <Indent indent={'right'} size={25}/>
-      <Button onClick={stopTimer} type="button" color="grey">Стоп</Button>
+      <ButtonTimerOff isRest={isRest} resetTimer={resetTimer} isActive={isActive}/>
     </div>
   );
 }

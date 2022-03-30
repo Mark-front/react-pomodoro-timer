@@ -1,0 +1,22 @@
+.list {
+  position: relative;
+  padding-top: 5px;
+  border: 1px solid var(--greyC4);
+  background: var(--white);
+}
+
+
+.list::before, .list::after {
+  content: ''; 
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: -11px;
+  border: 5px solid transparent;
+  border-bottom: 5px solid var(--greyC4);
+ }
+ 
+ .list::after {
+  border-bottom: 5px solid var(--white);
+  top: -10px; 
+ }

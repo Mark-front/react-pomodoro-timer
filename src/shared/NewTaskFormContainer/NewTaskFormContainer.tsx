@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store/rootReducer';
 import { UpdateTaskInput } from '../../store/updateTaskInput/actions';
 import { TTaskArr, UpdateTaskArr } from '../../store/tasks/actions';
+import { generateRandomString } from '../utils/react/generateRandomIndex';
 
 interface IProps {
   arrTasks: TTaskArr[];
@@ -23,7 +24,8 @@ export function NewTaskFormContainer({arrTasks}: IProps) {
   }
   
   function buttonClick() {
-    dispatch(UpdateTaskArr({value}));
+    dispatch(UpdateTaskArr({value, id: generateRandomString(), number: 1}));
+    dispatch(UpdateTaskInput('')); 
   }
 
 

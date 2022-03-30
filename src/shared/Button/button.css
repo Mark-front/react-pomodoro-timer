@@ -12,7 +12,8 @@
 }
 
 .red {
-  background: var(--tomatoDC);
+  color: var(--tomatoDC);
+  border: 2px solid var(--tomatoDC);
 }
 
 .grey {
@@ -26,10 +27,6 @@
 }
 
 .button:hover.red {
-  background: var(--tomatoB7);
-}
-
-.button:hover.grey {
-  background: var(--tomatoDC);
   color: var(--white);
+  background: var(--tomatoDC);
 }

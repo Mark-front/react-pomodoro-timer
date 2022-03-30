@@ -13,3 +13,11 @@
   font-size: 16px;
   line-height: 17px;
 }
+
+.active {
+  background: var(--tomatoDC);
+}
+
+.rest {
+  background: var(--greenA8);
+}

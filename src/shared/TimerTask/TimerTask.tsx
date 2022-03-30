@@ -4,12 +4,17 @@ import styles from './timertask.css';
 import { TimerTaskNumber } from '../TimerTaskNumber/TimerTaskNumber';
 import { Indent } from '../Indent/Indent';
 
-export function TimerTask() {
+interface ITimerTaskProps {
+  taskName: string;
+  taskNumber: number;
+}
+
+export function TimerTask({taskName, taskNumber}: ITimerTaskProps) {
   return (
     <div className={styles.box}>
-      <TimerTaskNumber/>
+      <TimerTaskNumber number={taskNumber}/>
       <Indent indent={'right'} size={5} />
-      <TimerTaskName className={styles.name}/>
+      <TimerTaskName taskName={taskName} className={styles.name}/>
     </div>
   );
 }

@@ -77,8 +77,9 @@ module.exports = {
 			    use: 'file-loader',
 			},
       {
-        test: /\.(?:ico|gif|png|mp3|jpg|jpeg)$/i,
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
         type: 'asset/resource',
+
       },
     ],
   },

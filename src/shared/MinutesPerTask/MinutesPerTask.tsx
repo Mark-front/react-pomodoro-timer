@@ -9,7 +9,6 @@ export function MinutesPerTask({minutesDefault}: IMinutesPerTask) {
   let hour = 0;
   if(minutesDefault > 60) {
     hour = Math.floor(minutesDefault/60);
-    console.log(hour)
     minutesDefault = minutesDefault - (hour*60)
   }
   return ( 

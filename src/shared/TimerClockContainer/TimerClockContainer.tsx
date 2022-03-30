@@ -6,16 +6,22 @@ import { TimerClock } from '../TimerClock/TimerClock';
 import { TTimerClockState } from '../../store/timer/reducer';
 
 interface IProps {
-  valueClock: TTimerClockState;
+  valueClock: {
+    minutes: number;
+    seconds: number;
+  };
+  isActive: boolean | null;
+  addClick: () => void;
+  isRest: boolean;
 }
 
 
-export function TimerClockContainer({valueClock}: IProps) {
+export function TimerClockContainer({isRest, addClick, isActive, valueClock}: IProps) {
   return (
     <div className={styles.box}>
-      <TimerClock sec={valueClock.seconds} min={valueClock.minutes}/>
+      <TimerClock isRest={isRest} isActive={isActive} sec={valueClock.seconds} min={valueClock.minutes}/>
       <Indent indent={'right'} size={25}/>
-      <ButtonPlus/>
+      <ButtonPlus onClick={addClick}/>
     </div>
   );
 }

@@ -7,6 +7,7 @@ interface IButtonProps {
   type: "button" | "reset" | "submit";
   color: "green" | "red" | "grey";
   onClick?: () => void;
+  isDisabled?: boolean
   children: React.ReactNode;
 }
 
@@ -15,10 +16,11 @@ const colors = {
   "red": styles.red,
   "grey": styles.grey
 } 
-export function Button({type="button", color="green", children, onClick}: IButtonProps) {
+export function Button({type="button", color="green", children, onClick, isDisabled}: IButtonProps) {
   const classes = classNames(styles.button, colors[color]);
+  const classesDisabled = classNames(styles.button, colors['grey']);
   return (
-    <button onClick={onClick} type={type} className={classes}>
+    <button disabled={isDisabled} onClick={onClick} type={type} className={isDisabled ? classesDisabled : classes}>
       {children}
     </button>
   );

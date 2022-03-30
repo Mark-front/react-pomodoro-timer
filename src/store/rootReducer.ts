@@ -14,9 +14,12 @@ const initialState = {
   taskInputText: {text: ''},
   taskArr: {arr: []},
   timerClock: {
-    minutes: 25,
-    seconds: 0 
-  }
+    minutes: 0,
+    seconds: 3,
+    isActive: null,
+    isRest: false,
+    count: 1
+  },
 }
 
 export type MyAction = UpdateTaskInputAction;
@@ -29,13 +32,21 @@ export const rootReducer: Reducer<RootState> = (state = initialState, action) =>
         taskInputText: taskInputReducer(state.taskInputText, action),
       };
     case 'UPDATE_TASK_ARR': 
+    case 'GET_TASK_ARR': 
+    case 'DELETE_TASKS_ITEM': 
+    case 'EDIT_TASKS_ITEM': 
+    case 'REMOVE_TASK_NUMBER': 
+    case 'ADD_TASK_NUMBER': 
       return {
         ...state,
       taskArr: taskArrReducer(state.taskArr, action),
       };
     case 'START_TIMER': 
+    case 'TOGGLE_TIMER_REST': 
     case 'STOP_TIMER': 
     case 'TIMER_RESET': 
+    case 'TIMER_ADD_TIME': 
+    case 'NUMBER_OF_TRIGGERED_TIMERS': 
       return {
         ...state,
       timerClock: timerClockReducer(state.timerClock, action),

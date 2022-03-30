@@ -1,0 +1,15 @@
+.button {
+  display: flex;
+  width: 163px;
+  height: 36px;
+  align-items: center;
+  padding-left: 16px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 17px;
+  color: var(--grey99);
+}
+
+.button:hover {
+  background: var(--greyF4);
+}

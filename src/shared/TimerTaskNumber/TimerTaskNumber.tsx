@@ -1,10 +1,14 @@
 import React from 'react';
 import styles from './timertasknumber.css';
 
-export function TimerTaskNumber() {
+interface ITimerTaskNumberProps {
+  number: number;
+}
+
+export function TimerTaskNumber({number}: ITimerTaskNumberProps) {
   return (
     <div className={styles.number}>
-      Псевдо Задача 1 - 
+      Задача {number} - 
     </div>
   );
 }

@@ -10,7 +10,8 @@ module.exports = {
   entry: path.resolve(__dirname, '../src/server/server.js'),
   output: {
     path: path.resolve(__dirname, '../dist/server'),
-    filename: "server.js"
+    filename: "server.js",
+    publicPath: '/static/',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']

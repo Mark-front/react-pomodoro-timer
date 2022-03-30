@@ -1,13 +1,7 @@
-import React from 'react';
-import mp3 from './beng.mp3';
-import img from '../icons/png/tomato 1.png';
+import mp3 from './beng2.mp3';
 
 export function sound() {
-  console.log(mp3)
-  return (
-    <>
-    <img src={img} alt="" />
-    <audio controls src={mp3}></audio>
-    </>
-  );
+
+  const audio = new Audio(mp3);
+  audio.autoplay = true
 }

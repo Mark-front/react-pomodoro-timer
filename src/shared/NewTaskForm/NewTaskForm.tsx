@@ -13,7 +13,7 @@ export function NewTaskForm({value, onChange, onSubmit, onClick}: INewTaskFormPr
   return (
     <form onSubmit={onSubmit} className={styles.form}>
       <input placeholder='Название задачи' className={styles.input} onChange={onChange} value={value} type="text"  aria-label='Новая задача'/>
-      <Button onClick={onClick} type='submit' color='green'>
+      <Button onClick={onClick} isDisabled={value.length >= 2 ? false : true} type='submit' color='green'>
         Добавить
       </Button>
     </form>

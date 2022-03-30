@@ -1,10 +1,17 @@
 .clock {
   display: flex;
-  width: 380px;
   align-items: center;
   color: var(--grey33);
   font-weight: 200;
   font-size: 150px;
   line-height: 179px;
   user-select: none;
+}
+
+.active {
+  color: var(--tomatoDC);
+}
+
+.rest {
+  color: var(--greenA8);
 }
