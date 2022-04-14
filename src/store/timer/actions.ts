@@ -29,7 +29,7 @@ export type TStopTimer = {
   type: typeof STOP_TIMER,
   minutes: number,
   seconds: number,
-  isActive: boolean | null
+  isActive: boolean | null,
 }
 
 export const stopTimerAction: ActionCreator<TStopTimer> = (minutes, seconds, isActive) => ({
@@ -48,6 +48,36 @@ export type TTimerAddTime = {
 export const addTimeTimerAction: ActionCreator<TTimerAddTime> = (minutes) => ({
   type: TIMER_ADD_TIME, 
   minutes,
+});
+
+export const TIMER_SET_STATE = "TIMER_SET_STATE";
+export type TTimerSetState = {
+  type: typeof TIMER_SET_STATE,
+  minutes: number,
+  seconds: number,
+  isRest: boolean,
+  isActive: boolean,
+  count: number
+}
+
+export const timerSetStateAction: ActionCreator<TTimerSetState> = (minutes, seconds, isRest, isActive, count) => ({
+  type: TIMER_SET_STATE, 
+  minutes,
+  seconds,
+  isRest,
+  isActive,
+  count
+});
+
+export const TIMER_ALL_TIME = "TIMER_ALL_TIME";
+export type TTimerAllTime = {
+  type: typeof TIMER_ALL_TIME,
+  minutesInTimer: number,
+}
+
+export const allTimeTimerAction: ActionCreator<TTimerAllTime> = (minutesInTimer) => ({
+  type: TIMER_ALL_TIME, 
+  minutesInTimer,
 });
 
 export const TOGGLE_TIMER_REST = "TOGGLE_TIMER_REST";

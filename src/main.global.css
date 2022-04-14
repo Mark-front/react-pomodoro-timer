@@ -1,23 +1,13 @@
 @import url('./shared/fonts/sf-ui-display-cufonfonts-webfont/style.css');
 
-:root {
-  --tomatoDC: #DC3E22;
-  --tomatoB7: #B7280F;
-  --greenA8:  #A8B64F;
-  --green89:  #899441;
-  --grey33:   #333333;
-  --grey99:   #999999;
-  --greyF4:   #f4f4f4;
-  --greyEC:   #ECECEC;
-  --greyE4:   #E4E4E4;
-  --greyE5:   #E5E5E5;
-  --greyC4:   #C4C4C4;
-  --white:    #FFFFFF;
-}
-
 body {
+  background-color: var(--white);
   padding: 0;
   margin: 0;
+}
+
+h2, h3 {
+  font-family: 'SF UI Display Bold';
 }
 
 * {

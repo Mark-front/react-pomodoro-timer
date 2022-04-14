@@ -3,7 +3,7 @@ import styles from './newtaskformcontainer.css';
 import { NewTaskForm } from '../NewTaskForm/NewTaskForm';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store/rootReducer';
-import { UpdateTaskInput } from '../../store/updateTaskInput/actions';
+import { UpdateTaskInput } from '../updateTaskInput/actions';
 import { TTaskArr, UpdateTaskArr } from '../../store/tasks/actions';
 import { generateRandomString } from '../utils/react/generateRandomIndex';
 

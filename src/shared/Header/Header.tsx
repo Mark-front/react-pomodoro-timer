@@ -3,13 +3,19 @@ import styles from './header.css';
 import { Layout } from '../Layout/Layout';
 import { Logo } from '../Logo/Logo';
 import { StatisticsLink } from '../StatisticsLink/StatisticsLink';
+import { DarkMode } from '../DarkMode/DarkMode';
 
-export function Header() {
+interface IHeaderProps {
+  isDarkChange: () => void;
+}
+
+export function Header({isDarkChange}: IHeaderProps) {
   return (
     <header className={styles.header}>
         <Layout className={styles.headerIn}>
           <Logo/>
-          <StatisticsLink/>        
+          <DarkMode isDarkChange={isDarkChange}/>
+          <StatisticsLink/>   
         </Layout>
     </header>
   );

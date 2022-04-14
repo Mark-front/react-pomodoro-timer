@@ -4,7 +4,7 @@ import styles from './statisticslink.css';
 
 export function StatisticsLink() {
   return (
-    <a className={styles.link} href="#">
+    <a className={styles.link} href="/statistics">
       <StatisticsIcon/>
       <span className={styles.text}>Cтатистика</span>
     </a>

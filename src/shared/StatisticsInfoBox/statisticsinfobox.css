@@ -1,0 +1,53 @@
+.box {
+  position: relative;
+  padding: 25px;
+  width: 405px;
+  background-color: var(--greyF4);
+}
+
+.box.boxFocus {
+  background-color: var(--orangeFFD);
+}
+
+.box.boxPause {
+  background-color: var(--purpleDF);
+}
+
+.box.boxStops {
+  background-color: var(--blueC5);
+}
+
+.header {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  margin: 0;
+}
+
+.value {
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 76px;
+}
+
+.icon, .iconDisabled {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+}
+
+.icon.iconDisabled svg path {
+  stroke: var(--greyC4);
+}
+
+.icon.iconFocus svg path{
+  stroke: var(--orangeFFA);
+}
+
+.icon.iconPause svg path{
+  stroke: var(--purple9C);
+}
+
+.iconStops svg path{
+  stroke: var(--greyC4);
+}

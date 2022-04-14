@@ -1,0 +1,16 @@
+.column {
+  width: 77px;
+  background-color: var(--tomatoEA);
+}
+
+.column:not(:last-child) {
+  margin-right: 32px;
+}
+
+.column.columnIsDisabled {
+  height: 5px;
+  background-color: var(--greyC4);
+}
+.column.columnIsSelected {
+  background-color: var(--tomatoDC);
+}

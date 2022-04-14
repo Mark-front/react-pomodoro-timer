@@ -1,0 +1,14 @@
+.block {
+  display: block;
+  width: 100%;
+}
+
+.infoAndGraphContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoBlockContainer {
+  display: flex;
+  justify-content: space-between;
+}

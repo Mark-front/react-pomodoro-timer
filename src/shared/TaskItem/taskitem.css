@@ -6,3 +6,39 @@
   border-top: 1px solid var(--greyE4);
   border-bottom: 1px solid var(--greyE4);
 }
+
+.fadeOff {
+  transition: all 0.2s;
+  animation: fadeOff 1s;
+  -webkit-animation: fadeOff 1s;
+  -moz-animation: fadeOff 1s;
+  -o-animation: fadeOff 1s;
+  -ms-animation: fadeOff 1s;
+}
+
+.fadeIn {
+  transition: all 0.2s;
+  animation: fadeIn 1s;
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  -o-animation: fadeIn 1s;
+  -ms-animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOff {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

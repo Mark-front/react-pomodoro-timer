@@ -4,13 +4,13 @@ import styles from './buttontimeron.css';
 
 interface IProps {
   startTimer: () => void;
-  stopTimer: () => void;
+  pauseTimer: () => void;
   isActive: boolean | null;
   isDisabled: boolean;
 }
 
 
-export function ButtonTimerOn({isDisabled, startTimer, stopTimer, isActive}: IProps) {
+export function ButtonTimerOn({isDisabled, startTimer, pauseTimer, isActive}: IProps) {
   return (
     <>
       {(isActive === null && isDisabled === true) ?
@@ -18,7 +18,7 @@ export function ButtonTimerOn({isDisabled, startTimer, stopTimer, isActive}: IPr
         (isActive === null) ?
           <Button  onClick={startTimer} type="button" color="green">Старт</Button> :
           (isActive !== null && isActive) ?
-            <Button onClick={stopTimer} type="button" color="green">Пауза</Button>
+            <Button onClick={pauseTimer} type="button" color="green">Пауза</Button>
             : 
             <Button onClick={startTimer} type="button" color="green">Продолжить</Button> 
       }

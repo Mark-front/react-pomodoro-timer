@@ -1,0 +1,77 @@
+.form {
+  display: block;
+  position: absolute;
+  padding: 40px;
+  width: 100%;
+  height: calc(100% - 55px);
+  bottom: 0;
+  background-color: var(--greyF4);
+  right: -100%;
+  opacity: 0;
+  transition: all .5s ease;
+}
+
+.formVisible {
+  opacity: 1;
+  right: 0;
+}
+
+.input {
+  display: block;
+  text-align: center;
+  width: 33px;
+  height: 33px;
+  border: none;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 17px;
+  background: var(--greyC4);
+  color: var(--grey33);
+  margin-right: 25px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  user-select: none;
+  width: 100%;
+  border: none;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 17px;
+  margin-bottom: 25px;
+}
+
+.input::placeholder {
+  color: var(--white);
+}
+
+.checkbox {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
+  padding: 5px;
+  background: var(--greyC4);
+  color: var(--grey33);
+  margin-right: 25px;
+}
+
+.checkboxInput {
+  display: none;
+}
+
+.checked {
+  display: block;
+  width: 0;
+  height: 0;
+  background: var(--greenA8);
+  transition: all .2s ease;
+}
+
+.checkboxChecked {
+  width: 100%;
+  height: 100%;
+}

@@ -3,18 +3,19 @@ import { Button } from '../Button/Button';
 import styles from './buttontimeroff.css';
 
 interface IProps {
+  stopTimer: () => void;
   resetTimer: () => void;
   isActive: boolean | null;
   isRest: boolean;
 }
 
-export function ButtonTimerOff({isRest, isActive, resetTimer }: IProps) {
+export function ButtonTimerOff({isRest, isActive, stopTimer, resetTimer }: IProps) {
   function howButton() {
     if(isActive === null) {//если нет задачи 
-      return <Button isDisabled={true} onClick={resetTimer} type="button" color="grey">Стоп</Button>
+      return <Button isDisabled={true} onClick={stopTimer} type="button" color="grey">Стоп</Button>
     } else {
       if(isActive !== null && isActive && !isRest) {// есть задача и включен и не отдых
-        return <Button onClick={resetTimer} type="button" color="red">Стоп</Button> 
+        return <Button onClick={stopTimer} type="button" color="red">Стоп</Button> 
       } else {
         if(!isActive && !isRest) {//есть задача и отдых
           return <Button onClick={resetTimer} type="button" color="red">Сделано</Button> 

@@ -1,0 +1,25 @@
+.item button{
+  display: flex;
+  justify-content: center;
+  width: 77px;
+  padding: 11px 0;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: var(--grey99);
+}
+
+.item:not(:last-child) {
+  margin-right: 32px;
+}
+
+.item.itemSelected button {
+  display: flex;
+  justify-content: center;
+  width: 77px;
+  padding: 11px 0;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: var(--tomatoDC);
+}

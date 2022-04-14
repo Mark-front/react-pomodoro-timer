@@ -1,0 +1,51 @@
+.block {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  columns: 1;
+  height: 179px;
+  width: 296px;
+  background-color: var(--greyF4);
+}
+
+.blockWithNumber {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  columns: 1;
+  padding-top: 23px;
+  height: 179px;
+  width: 296px;
+  background-color: var(--greyF4);
+}
+
+.tomatoBox {
+  display: flex;
+  align-items: center;
+}
+
+.tomatoBoxText {
+  padding-left: 17px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  color: var(--grey99);
+}
+
+.text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 9px 0;
+  text-align: center;
+  font-family: 'SF UI Display Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  background-color: var(--tomatoDC);
+  color: var(--white);
+}

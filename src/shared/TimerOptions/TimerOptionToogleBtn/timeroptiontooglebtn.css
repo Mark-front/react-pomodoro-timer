@@ -1,0 +1,14 @@
+.btn > svg > path{
+  fill: var(--greyC4);
+}
+
+.btn:hover > svg > path{
+  fill: var(--green89);
+}
+
+.btn {
+  z-index: 10;
+  position: absolute;
+  right: 10px;
+  top: 65px;
+}

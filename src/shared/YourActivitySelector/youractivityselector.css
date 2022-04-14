@@ -1,0 +1,88 @@
+
+:global(.custom-select__control) {
+  width: 370px !important;
+  height: 55px !important;
+  background: var(--greyF4) !important;
+  border-radius: 0px !important; 
+  border: none !important;
+  border-bottom: 0em solid rgba(0, 0, 0, 0) !important;
+  transition: border-bottom .2s ease-in-out;
+}
+
+:global(.custom-select__control--is-focused) {
+  box-shadow: none !important;
+}
+
+:global(.custom-select__control--menu-is-open) {
+  border-bottom: 1px solid var(--greyDE) !important;
+}
+
+:global(.custom-select__input) {
+  caret-color: transparent !important;
+  font-family: 'SF UI Display Light' !important;
+  color: var(--grey33) !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 17px !important;
+}
+
+:global(.custom-select__indicator-separator) {
+  display: none !important;
+}
+
+:global(.custom-select__indicator) {
+  transform: rotate(180deg);
+  content: url(../icons/png/arrow_select_indicator.svg);
+  padding: 0 0 0 17px !important;
+}
+
+:global(.custom-select__control--menu-is-open .custom-select__indicator) {
+  transform: rotate(0deg);
+  padding: 0 17px 0 0  !important;
+}
+
+:global(.custom-select__menu) {
+  opacity: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background-color: var(--greyF4) !important;
+  transition: opacity .2s ease-in-out;
+  animation: renderMenu .2s ease-in-out 1 normal forwards;
+}
+
+@keyframes renderMenu {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+:global(.custom-select__menu-list) {
+  padding: 0 !important;
+}
+
+:global(.custom-select__option) {
+  display: flex !important;
+  height: 55px !important;
+  align-items: center !important;
+  padding: 0 0 0 15px!important;
+  border-bottom: 1px solid var(--greyDE) !important;
+}
+
+:global(.custom-select__option:last-child) {
+  border-bottom: none !important;
+}
+
+:global(.custom-select__option.custom-select__option--is-selected) {
+  display: none !important;
+}
+
+:global(.custom-select__option.custom-select__option--is-focused) {
+  padding: 0 0 0 15px!important;
+  background-color: var(--greyC4) !important;
+  color: var(--white) !important;
+}

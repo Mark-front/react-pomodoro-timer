@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { ModalDeleteItem } from '../ModalDeleteItem';
 import { useDispatch } from 'react-redux';
 import { DeleteTasksItem } from '../../store/tasks/actions';
+import classNames from 'classnames';
 
 interface ITaskItemProps {
   taskName: string;
@@ -27,17 +28,13 @@ export function TaskItem({itemId, taskName, itemNumber}: ITaskItemProps) {
     dispatch(DeleteTasksItem(itemId));
   }
 
-
-
-  console.log(isModalOpend)
-
   useEffect(() => {
     setIsDropdownOpen(isDropdownOpen);
     setEditActive(isEditActive);
   }, [isDropdownOpen, isEditActive]);
   
   return (
-    <li className={styles.item}>
+    <li id={itemId} className={classNames(styles.item)}>
       <TaskNumber taskNumber={itemNumber}/>
       <Indent indent={'right'} size={10}/>
       <TimerTaskName

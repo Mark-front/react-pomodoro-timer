@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { TTaskArr } from '../../store/tasks/actions';
 import { TaskItem } from '../TaskItem';
 import styles from './tasklist.css';
+import {TransitionGroup, CSSTransition} from 'react-transition-group';
 
 interface ITaskListProps {
   arrItems: TTaskArr[];
@@ -10,11 +11,19 @@ interface ITaskListProps {
 export function TaskList({arrItems}: ITaskListProps) {
   return (
     <ul className={styles.list}>
-      {arrItems.length > 0 ? 
-        arrItems.map((item) => (
-          <TaskItem itemNumber={item.number} itemId={item.id} key={item.id} taskName={item.value}/>
-        )) : null
-      }
+      <TransitionGroup>
+        {arrItems.length > 0 ? 
+          arrItems.map((item) => (
+            <CSSTransition
+              key={item.id}
+              timeout={500}
+              classNames="item"
+            >
+              <TaskItem itemNumber={item.number} itemId={item.id} taskName={item.value}/>
+            </CSSTransition>
+          )) : null
+        }
+      </TransitionGroup>
     </ul>
   );
 }

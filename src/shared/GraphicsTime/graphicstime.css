@@ -1,0 +1,24 @@
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 51px;
+}
+
+.line {
+  display: block;
+  width: 843px;
+  height: 1px;
+  opacity: 0.2;
+  background-color: var(--grey33);
+}
+
+.time {
+  white-space: nowrap;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 33px;
+  color: var(--grey33);
+}

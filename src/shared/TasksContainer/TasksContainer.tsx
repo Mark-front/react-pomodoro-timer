@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './taskscontainer.css';
 import { TaskList } from '../TaskList/TaskList';
 import { MinutesPerTask } from '../MinutesPerTask/MinutesPerTask';
 import { Indent } from '../Indent/Indent';
 import { TTaskArr } from '../../store/tasks/actions';
-import { useEffect } from 'react';
 
 interface ITasksContainerProps {
   arrTasks: TTaskArr[];

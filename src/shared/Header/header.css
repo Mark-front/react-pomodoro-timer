@@ -1,6 +1,6 @@
 .header {
   padding: 15px;
-  box-shadow: 0px 10px 63px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 10px 63px var(--black12);
 }
 
 .headerIn {

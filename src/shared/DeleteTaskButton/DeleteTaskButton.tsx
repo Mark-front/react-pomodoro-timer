@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
-import { useDispatch} from 'react-redux';
-import { DeleteTasksItem} from '../../store/tasks/actions';
+import React from 'react';
 import { IconTrash } from '../icons/IconTrash';
 import { Indent } from '../Indent';
-import { ModalDeleteItem } from '../ModalDeleteItem';
 import styles from './deletetaskbutton.css';
 
 interface IDeleteTaskButtonProps {

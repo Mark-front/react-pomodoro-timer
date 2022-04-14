@@ -1,0 +1,9 @@
+.moon {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%; 
+  transform: rotate(125deg);
+  /* I set 2 shadows where the first one doesn't have blur and spread for firefox fix. */
+  box-shadow: inset 0px 16px var(--black), inset 0px 16px 1px 1px var(--black);
+  -moz-box-shadow: inset 0px 16px var(--black), inset 0px 16px 1px 1px var(--black);
+}

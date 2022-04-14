@@ -4,7 +4,7 @@ import { TomatoIcon } from '../icons/TomatoIcon';
 
 export function Logo() {
   return (
-    <a className={styles.link} href="#">
+    <a className={styles.link} href="/tomato">
       <TomatoIcon/> 
       <span className={styles.text}>
         pomodoro_box

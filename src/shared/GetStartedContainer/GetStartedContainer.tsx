@@ -26,9 +26,9 @@ export function GetStartedContainer() {
   }, [TaskArr]);
   return (
     <div className={styles.box}>
-      <h1 className={styles.header}>
+      <h2 className={styles.header}>
         Ура! Теперь можно начать работать:
-      </h1>
+      </h2>
       <GetStartedDescription/>
       <Indent indent={'bottom'} size={25} />
       <NewTaskFormContainer arrTasks={TaskArr}/>

@@ -1,22 +1,35 @@
 import React from 'react';
 import styles from './minutespertask.css';
+import classNames from 'classnames';
+import { getNoun } from '../utils/js/getNoun';
 
 interface IMinutesPerTask {
   minutesDefault: number;
+  className?: string;
+  isFull?: boolean;
 }
 
-export function MinutesPerTask({minutesDefault}: IMinutesPerTask) {
+export function MinutesPerTask({isFull, className, minutesDefault}: IMinutesPerTask) {
+  const classes = classNames(className, styles.minutes)
   let hour = 0;
   if(minutesDefault > 60) {
     hour = Math.floor(minutesDefault/60);
     minutesDefault = minutesDefault - (hour*60)
   }
   return ( 
-    <div className={styles.minutes}>
-      {minutesDefault !== 0 && hour <= 0 ? `${minutesDefault} мин` : null} 
-      {hour !== 0 && hour === 1? `${hour} час ${minutesDefault} мин` : null}
-      {hour > 1 && hour <= 4 || (hour % 10 <= 4 && hour > 21) ? `${hour} часа ${minutesDefault} мин` : null}
-      {hour >= 5 && hour <= 20 || (hour % 10 >= 5 && hour > 24) ? `${hour} часов ${minutesDefault} мин` : null}
-    </div>
+    <>
+    {minutesDefault !== 0 && 
+      <div className={className ? classes : styles.minutes}>
+        {!isFull ? 
+          hour === 0 ? 
+            minutesDefault + " " + "мин"  : 
+            hour + " "+ "ч" + " " + minutesDefault + " " + "мин" :
+              hour === 0 ?
+                minutesDefault + " " + getNoun(minutesDefault, 'минута', 'минуты', 'минут') : 
+                hour + " " + getNoun(hour, 'час', 'часа', 'часов') + " " + minutesDefault + " " + getNoun(minutesDefault, 'минута', 'минуты', 'минут')
+        } 
+      </div>
+    }
+    </>
   );
 }
