@@ -18,10 +18,12 @@ export const startTimerAction: ActionCreator<TStartTimer> = (minutes, seconds, i
 export const TIMER_RESET = "TIMER_RESET";
 export type TTimerReset = {
   type: typeof TIMER_RESET,
+  minutes: number
 }
 
-export const resetTimerAction: ActionCreator<TTimerReset> = (isRest) => ({
+export const resetTimerAction: ActionCreator<TTimerReset> = (minutes) => ({
   type: TIMER_RESET, 
+  minutes
 }); 
 
 export const STOP_TIMER = "STOP_TIMER";

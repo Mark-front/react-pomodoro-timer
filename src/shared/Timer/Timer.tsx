@@ -226,7 +226,7 @@ export function Timer() {
   
   //перезагружает и обнуляет таймер
   function resetTimer() {
-    dispatch(resetTimerAction()); // обнуляет таймер
+    dispatch(resetTimerAction(timerOptionsDataJSON.timePomodor)); // обнуляет таймер
     setTick(valueClock.minutes * 60 + valueClock.seconds);// рендерит обнуленное значение
     dispatch(toggleTimerRestAction(!valueClock.isRest));
     dispatch(numberOfTriggeredTimers(valueClock.count));
@@ -248,7 +248,7 @@ export function Timer() {
 
   //перезагружает и обнуляет таймер
   function stopTimer() {
-    dispatch(resetTimerAction()); // обнуляет таймер
+    dispatch(resetTimerAction(timerOptionsDataJSON.timePomodor)); // обнуляет таймер
     setTick(valueClock.minutes * 60 + valueClock.seconds);// рендерит обнуленное значение
     clearInterval(timerId);
     loadNewLocalStorageData('stops');

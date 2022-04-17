@@ -20,6 +20,8 @@ export type RootState = {
 const timerOptionsData = typeof localStorage !== "undefined" ? localStorage.getItem('timerOptions') : null;
 const timerOptionsDataJSON: IOptions = timerOptionsData !== null ? JSON.parse(timerOptionsData) : {};
 
+console.log(timerOptionsDataJSON)
+
 const initialState: RootState = {
   taskInputText: {text: ''},
   taskArr: {arr: []},
@@ -32,7 +34,7 @@ const initialState: RootState = {
   },
   timerClock: {
     minutesInTimer: 0,
-    minutes: timerOptionsDataJSON.timePomodor,
+    minutes: timerOptionsDataJSON.timePomodor === undefined ? 25 : timerOptionsDataJSON.timePomodor,
     seconds: 0,
     isActive: null,
     isRest: false,
