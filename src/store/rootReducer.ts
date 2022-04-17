@@ -18,17 +18,17 @@ export type RootState = {
 
 
 const timerOptionsData = typeof localStorage !== "undefined" ? localStorage.getItem('timerOptions') : null;
-const timerOptionsDataJSON: IOptions = timerOptionsData !== null ? JSON.parse(timerOptionsData) : '{}';
+const timerOptionsDataJSON: IOptions = timerOptionsData !== null ? JSON.parse(timerOptionsData) : {};
 
 const initialState: RootState = {
   taskInputText: {text: ''},
   taskArr: {arr: []},
   options: {
-    timePomodor: timerOptionsDataJSON.timePomodor,
-    timeShortRest: timerOptionsDataJSON.timeShortRest,
-    timeLongRest: timerOptionsDataJSON.timeLongRest,
-    frequencyLongRest: timerOptionsDataJSON.frequencyLongRest,
-    alertToggle: timerOptionsDataJSON.alertToggle
+    timePomodor: timerOptionsDataJSON.timePomodor ? timerOptionsDataJSON.timePomodor : 25,
+    timeShortRest: timerOptionsDataJSON.timeShortRest ? timerOptionsDataJSON.timeShortRest : 5,
+    timeLongRest: timerOptionsDataJSON.timeLongRest ? timerOptionsDataJSON.timeLongRest : 15,
+    frequencyLongRest: timerOptionsDataJSON.frequencyLongRest ? timerOptionsDataJSON.frequencyLongRest : 4,
+    alertToggle: timerOptionsDataJSON.alertToggle ? timerOptionsDataJSON.alertToggle : false
   },
   timerClock: {
     minutesInTimer: 0,

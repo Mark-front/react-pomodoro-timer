@@ -47,6 +47,7 @@ export interface ITimerState {
   isLoad: boolean;
   howWeek: "nowWeek" | "lastWeek" | "beforeLastWeek";
   howDay: string;
+  nowDay: string;
   time: number;
   isActive: boolean | null;
   isRest: boolean;
@@ -58,13 +59,13 @@ export interface ITimerState {
 export function Timer() {
   const dispatch = useDispatch();
   const timerStorageData = typeof localStorage !== "undefined" ? localStorage.getItem('timerData') : null;
-  const timerStorageDataJSON: ITimerData = timerStorageData !== null ? JSON.parse(timerStorageData) : '{}';
+  const timerStorageDataJSON: ITimerData = timerStorageData !== null ? JSON.parse(timerStorageData) : {};
   const valueClock = useSelector<RootState, TTimerClockState>(state => state.timerClock);
   const timerOptions = useSelector<RootState, IOptions>(state => state.options);
   const timerOptionsData = typeof localStorage !== "undefined" ? localStorage.getItem('timerOptions') : null;
-  const timerOptionsDataJSON: IOptions = timerOptionsData !== null ? JSON.parse(timerOptionsData) : '{}';
+  const timerOptionsDataJSON: IOptions = timerOptionsData !== null ? JSON.parse(timerOptionsData) : {};
   const timerStateData = typeof localStorage !== "undefined" ? localStorage.getItem('timerState') : null;
-  const timerStateDataJSON: ITimerState = timerStateData !== null ? JSON.parse(timerStateData) : '{}';
+  const timerStateDataJSON: ITimerState = timerStateData !== null ? JSON.parse(timerStateData) : {};
   const TaskArr = useSelector<RootState, TTaskArr[]>(state => state.taskArr.arr);
   const time = valueClock.minutes * 60 + valueClock.seconds;
   const [tick, setTick] = useState(time);
@@ -75,6 +76,7 @@ export function Timer() {
   useEffect(() => { //coздает или перезаписывает данные о прогрессе пользователя
     if(timerStorageData !== null) {
       const dateInArr = new Date(timerStorageDataJSON.nowWeek[timerStorageDataJSON.nowWeek.length-1].dateDay);
+      
       if(dateInArr.getDate() < new Date().getDate()) {
         timerStorageDataJSON.beforeLastWeek = [];
         timerStorageDataJSON.beforeLastWeek.push(...timerStorageDataJSON.lastWeek);
@@ -90,6 +92,14 @@ export function Timer() {
       'nowWeek': weekDefault('nowWeek')
     }));}
     
+  }, []);
+
+  useEffect(() => {
+    if(timerStateDataJSON.nowDay !== nowDate) {
+      setNumberOfTasks(1);
+      timerStateDataJSON.nowDay = nowDate;
+      localStorage.setItem('timerState', JSON.stringify(timerStateDataJSON));
+    }
   }, []);
   
   useEffect(() => { //coздает или перезаписывает состояние таймера

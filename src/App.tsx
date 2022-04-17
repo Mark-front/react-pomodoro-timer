@@ -47,8 +47,6 @@ export function ReactApp() {
     --white:    #000000 !important;
   }`;
   useEffect(() => {
-    console.log(isDark);
-    
     if(!isDark) {
       document.getElementById('darkModeStyle')?.remove();
     } else {

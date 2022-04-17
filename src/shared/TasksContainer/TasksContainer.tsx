@@ -14,7 +14,8 @@ export function TasksContainer({arrTasks}: ITasksContainerProps) {
     <div className={styles.box}>
       <TaskList arrItems={arrTasks}/> 
       <Indent indent={'bottom'} size={19}/>
-      <MinutesPerTask minutesDefault={25*arrTasks.reduce((s, i) => s = s + i.number, 0)}/>
+      
+      <MinutesPerTask minutesDefault={arrTasks !== [] ? 25*arrTasks.reduce((s, i) => s = s + i.number, 0) : 0}/>
     </div>
   );
 }

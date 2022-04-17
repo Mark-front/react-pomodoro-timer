@@ -37,7 +37,7 @@ export function TimerOptions({onClose, isOpen, valueDefault}: ITimerOptionsProps
       case 'timeShortRest': 
       case 'timeLongRest': 
         if(value.length > 3) {
-            value = value.slice(0, -1);
+          value = value.slice(0, -1);
         }
       return value;
       case 'frequencyLongRest':
@@ -105,7 +105,7 @@ export function TimerOptions({onClose, isOpen, valueDefault}: ITimerOptionsProps
         </span>
         Включить уведомления
       </label>
-      <Button onClick={() => buttonClick()} type={'submit'} color={'green'} children={'Изменить настройки'} />
+      <Button isDisabled={(timePomodor === 0 || timeShortRest === 0 || timeLongRest === 0 || frequencyLongRest === 0)} onClick={() => buttonClick()} type={'submit'} color={'green'} children={'Изменить настройки'} />
     </form>
   );
 }

@@ -10,13 +10,13 @@ export const weekDefault = (howWeek: "nowWeek" | "lastWeek" | "beforeLastWeek") 
   let dayNow;
   switch (howWeek) {
     case ("nowWeek"):
-      dayNow = (current.getDate() - current.getDay())+2;
+      dayNow = (current.getDate() - 7)+2;
       break;
     case ("lastWeek"):
-      dayNow = (current.getDate() - (current.getDay()+7))+2;
+      dayNow = (current.getDate() - 14)+2;
       break;
     case ("beforeLastWeek"):
-      dayNow = (current.getDate() - (current.getDay()+14))+2;
+      dayNow = (current.getDate() -21)+2;
       break;
   }
   

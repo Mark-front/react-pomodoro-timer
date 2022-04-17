@@ -12,16 +12,18 @@ import { IStatistics, ChangeDayAction, ChangeWeekAction } from '../../store/stat
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/rootReducer';
 import { getDataStat } from '../utils/js/timerFunction/getDataStat';
-import { ITimerState } from '../Timer';
+import { ITimerData, ITimerState } from '../Timer';
 import { useEffect } from 'react';
+import { weekDefault } from '../utils/js/timerFunction/weekDefault';
 
 export function StatisticsPage() {
   const dispatch = useDispatch();
   const timerStateData = typeof localStorage !== "undefined" ? localStorage.getItem('timerState') : null;
-  const timerStateDataJSON: ITimerState = timerStateData !== null ? JSON.parse(timerStateData) : '{}';
+  const timerStateDataJSON: ITimerState = timerStateData !== null ? JSON.parse(timerStateData) : {};
   const statisticsState = useSelector<RootState, IStatistics>(state => state.statisticsState);
-  const data = getDataStat();
+  let data = getDataStat();
   const dataChangeDay = getChangeDay();
+
   
   function getChangeDay() {
     if(statisticsState.howWeek === 'nowWeek') {

@@ -20,8 +20,11 @@ export function Button({type="button", color="green", children, onClick, isDisab
   const classes = classNames(styles.button, colors[color]);
   const classesDisabled = classNames(styles.button, colors['grey']);
   return (
-    <button disabled={isDisabled} onClick={onClick} type={type} className={isDisabled ? classesDisabled : classes}>
-      {children}
-    </button>
+    <>
+      <button disabled={isDisabled} onClick={onClick} type={type} className={isDisabled ? classesDisabled : classes}>
+        {children}
+      </button>
+      {(type === 'submit' && isDisabled) ? <span className={styles.isDisabledMessege}>*Пожалуйста, заполните поля</span> : null}
+    </>
   );
 }

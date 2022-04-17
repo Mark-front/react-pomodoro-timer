@@ -13,7 +13,7 @@ export function GetStartedContainer() {
   const TaskArr = useSelector<RootState, TTaskArr[]>(state => state.taskArr.arr);
   const dispatch = useDispatch();
   const tasks = typeof localStorage !== "undefined" ? localStorage.getItem('tasksArr') : null;
-  const tasksJSON = tasks !== null ? JSON.parse(tasks) : '{}';
+  const tasksJSON = tasks !== null ? JSON.parse(tasks) : [];
 
   useEffect(() => {
     if(tasksJSON.length !== 0) {
