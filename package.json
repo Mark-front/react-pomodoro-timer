@@ -2,11 +2,15 @@
   "name": "reactjs",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "build:dev": "cross-env NODE_ENV=development webpack",
-    "build:prod": "cross-env NODE_ENV=production webpack",
+    "build": "cross-env NODE_ENV=production webpack",
     "dev": "cross-env NODE_ENV=development node ./bin/dev.js",
-    "test": "jest"
+    "test": "jest",
+    "start": "node ./dist/server/server.js"
   },
   "repository": {
     "type": "git",
@@ -15,7 +19,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
+    "axios": "^0.21.1",
+    "classnames": "^2.2.6",
+    "cross-env": "^7.0.3",
+    "express": "^4.17.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-tinder-card": "^1.4.0",
+    "react-transition-group": "^4.4.2",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
     "@babel/core": "^7.17.8",
     "@babel/eslint-parser": "^7.17.0",
     "@babel/node": "^7.16.8",
@@ -61,18 +75,6 @@
     "webpack-dev-server": "^3.11.1",
     "webpack-hot-middleware": "^2.25.0",
     "webpack-node-externals": "^2.5.2"
-  },
-  "dependencies": {
-    "axios": "^0.21.1",
-    "classnames": "^2.2.6",
-    "cross-env": "^7.0.3",
-    "express": "^4.17.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-tinder-card": "^1.4.0",
-    "react-transition-group": "^4.4.2",
-    "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8"
   },
   "bin": {
     "reactjs": "bin/dev.js"
