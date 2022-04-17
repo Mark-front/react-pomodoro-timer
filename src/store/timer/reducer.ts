@@ -23,7 +23,7 @@ const initialTaskArrState = {
 };
 
 const timerOptionsData = typeof localStorage !== "undefined" ? localStorage.getItem('timerOptions') : null;
-const timerOptionsDataJSON: IOptions = timerOptionsData !== null ? JSON.parse(timerOptionsData) : '{}';
+const timerOptionsDataJSON: IOptions = timerOptionsData !== null ? JSON.parse(timerOptionsData) : {};
 
 export const timerClockReducer: Reducer<TTimerClockState, TTimerClockActions> = (state = initialTaskArrState, action) => {
   switch(action.type) {
@@ -53,7 +53,7 @@ export const timerClockReducer: Reducer<TTimerClockState, TTimerClockActions> = 
     case TIMER_RESET: 
       return {
         ...state,
-        minutes: state.minutes = timerOptionsDataJSON.timePomodor,
+        minutes: state.minutes = timerOptionsDataJSON.timePomodor ? timerOptionsDataJSON.timePomodor : 25,
         seconds: state.seconds = 0,
         isActive: state.isActive = null,
       };

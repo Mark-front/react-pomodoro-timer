@@ -106,7 +106,7 @@ export function Timer() {
     if(timerStateData === null) {
       localStorage.setItem('timerState', JSON.stringify({
         isLoad: true,
-        time: 1500,
+        time: valueClock.minutes*60,
         isActive: null,
         isRest: false
       }));
