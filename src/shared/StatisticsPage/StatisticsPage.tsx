@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './statisticspage.css';
 import { YourActivityContainer } from '../YourActivityContainer/YourActivityContainer';
 import { StatisticsDay } from '../StatisticsDay';
@@ -12,14 +12,18 @@ import { IStatistics, ChangeDayAction, ChangeWeekAction } from '../../store/stat
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/rootReducer';
 import { getDataStat } from '../utils/js/timerFunction/getDataStat';
-import { ITimerData, ITimerState } from '../Timer';
+import { ITimerState } from '../Timer';
 import { useEffect } from 'react';
-import { weekDefault } from '../utils/js/timerFunction/weekDefault';
+import { timerSetStateAction } from '../../store/timer/actions';
+import { TTimerClockState } from '../../store/timer/reducer';
 
 export function StatisticsPage() {
   const dispatch = useDispatch();
   const timerStateData = typeof localStorage !== "undefined" ? localStorage.getItem('timerState') : null;
   const timerStateDataJSON: ITimerState = timerStateData !== null ? JSON.parse(timerStateData) : {};
+  const valueClock = useSelector<RootState, TTimerClockState>(state => state.timerClock);
+  console.log(valueClock);
+  
   const statisticsState = useSelector<RootState, IStatistics>(state => state.statisticsState);
   let data = getDataStat();
   const dataChangeDay = getChangeDay();
@@ -31,13 +35,14 @@ export function StatisticsPage() {
         return day.dateDay === statisticsState.howDay;
       })[0];
     } else {
+      console.log(data ,data[`${statisticsState.howWeek}`][0])
       return data[`${statisticsState.howWeek}`][0]
     };
   }
-  useEffect(() => {
+  window?.addEventListener('beforeunload', () => {
     dispatch(ChangeDayAction(timerStateDataJSON.howDay));
     dispatch(ChangeWeekAction(timerStateDataJSON.howWeek));
-  }, []);
+  });
 
   function getDayName() {
     const days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];

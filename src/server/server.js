@@ -4,7 +4,7 @@ import { App } from '../AppContainer';
 import { indexTemplate } from './indexTemplate';
 
 const app = express();
-const PORT = process.env.PORT ||4002;
+const PORT = process.env.PORT || 4014;
 
 app.use('/static', express.static('./dist/client'))
 
