@@ -103,8 +103,6 @@ export function Timer() {
   }, []);
   
   useEffect(() => { //coздает или перезаписывает состояние таймера
-    console.log(timerStateData)
-
     if(timerStateDataJSON.time === null || timerStateDataJSON.time === undefined) {
       localStorage.setItem('timerState', JSON.stringify({
         isLoad: true,

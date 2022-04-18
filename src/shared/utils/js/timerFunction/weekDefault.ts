@@ -7,21 +7,19 @@ export const weekDefault = (howWeek: "nowWeek" | "lastWeek" | "beforeLastWeek") 
   const current = new Date();
   const year = current.getUTCFullYear();
   const month = current.getUTCMonth();
-  let dayNow;
-  switch (howWeek) {
-    case ("nowWeek"):
-      dayNow = (current.getDate() - 7)+2;
-      break;
-    case ("lastWeek"):
-      dayNow = (current.getDate() - 14)+2;
-      break;
-    case ("beforeLastWeek"):
-      dayNow = (current.getDate() -21)+2;
-      break;
-  }
+  const dayNow = () => {
+    switch (howWeek) {
+      case ("nowWeek"):
+        return (current.getDate() - current.getDay())+2;
+      case ("lastWeek"):
+        return (current.getDate() - current.getDay())-5;
+      case ("beforeLastWeek"):
+        return (current.getDate() -current.getDay())-12;
+    }
+  } ;
   
   for (let index = 0; index < 7; index++) {
-    weekArr.push(createDefaultDay(createData(year, month, dayNow+index)))
+    weekArr.push(createDefaultDay(createData(year, month, dayNow()+index)))
   }
   return weekArr ;
 }

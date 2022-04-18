@@ -6,13 +6,9 @@ export function getDataStat() {
   let timerDataStatJSON: ITimerData = timerDataStat !== null ? JSON.parse(timerDataStat) : {};
   if(timerDataStat !== null) {
     const dateInArr = new Date(timerDataStatJSON.nowWeek[timerDataStatJSON.nowWeek.length-1].dateDay);
-    
     if(dateInArr.getDate() < new Date().getDate()) {
-      timerDataStatJSON.beforeLastWeek = [];
-      timerDataStatJSON.beforeLastWeek.push(...timerDataStatJSON.lastWeek);
-      timerDataStatJSON.lastWeek = [];
-      timerDataStatJSON.lastWeek.push(...timerDataStatJSON.nowWeek);
-      timerDataStatJSON.nowWeek = [];
+      timerDataStatJSON.beforeLastWeek = {...timerDataStatJSON.lastWeek};
+      timerDataStatJSON.lastWeek = {...timerDataStatJSON.nowWeek};
       timerDataStatJSON.nowWeek = weekDefault('nowWeek');
       localStorage.setItem('timerData', JSON.stringify(timerDataStatJSON));
     }
@@ -21,7 +17,6 @@ export function getDataStat() {
     'lastWeek': weekDefault('lastWeek'),
     'nowWeek': weekDefault('nowWeek')
     }));
-    timerDataStatJSON = getDataStat();
   }
   return timerDataStatJSON;
 }
